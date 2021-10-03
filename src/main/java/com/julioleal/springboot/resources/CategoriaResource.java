@@ -1,7 +1,5 @@
 package com.julioleal.springboot.resources;
 
-import java.util.Optional;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -22,7 +20,7 @@ public class CategoriaResource {
 	@RequestMapping(value="/{id}", method=RequestMethod.GET)
 	public ResponseEntity<?> listar(@PathVariable int id) {
 
-		Optional<Categoria> obj = service.find(id);
+		Categoria obj = service.find(id);
 
 		return ResponseEntity.ok().body(obj);
 	}
