@@ -11,6 +11,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.MapsId;
 import javax.persistence.OneToOne;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.julioleal.springboot.domain.enums.EstadoPagamento;
 
 @Entity
@@ -22,6 +23,7 @@ public abstract class Pagamento implements Serializable {
 	private int id;
 	private int estado;
 	
+	@JsonBackReference
 	@OneToOne
 	@JoinColumn(name="pedido_id")
 	@MapsId
